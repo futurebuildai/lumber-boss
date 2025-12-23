@@ -579,8 +579,73 @@ UI Interactions:
 1. [x] Define Quick Reorder data model
 2. [x] Define My Account Portal data models
 3. [x] Document user stories with UI interactions
-4. [ ] Build My Account Portal frontend
-5. [ ] Set up PostgreSQL schema with migrations
-6. [ ] Build API endpoints (mock data first)
-7. [ ] Connect frontend to API
-8. [ ] Implement ERP integration
+4. [x] Build My Account Portal frontend
+5. [x] Build Product Catalog frontend (PLP + PDP)
+6. [x] Implement mock JSON data layer (`data/products.json`)
+7. [ ] Build Cart & Checkout frontend
+8. [ ] Set up PostgreSQL schema with migrations
+9. [ ] Build API endpoints (mock data first)
+10. [ ] Connect frontend to API
+11. [ ] Implement ERP integration
+
+---
+
+## Frontend Data Layer (Current)
+
+The frontend currently uses mock JSON data loaded via `fetch()`. This structure mirrors the future API response format for easy migration.
+
+### Mock Data Files
+
+| File | Description |
+|------|-------------|
+| `data/products.json` | Product catalog with 30 items, 6 categories |
+
+### Product JSON Schema (Current Implementation)
+
+```json
+{
+  "categories": [
+    {
+      "id": "lumber",
+      "name": "Lumber",
+      "slug": "lumber",
+      "description": "Dimensional lumber, studs, and framing materials"
+    }
+  ],
+  "products": [
+    {
+      "id": "PRD-001",
+      "sku": "2X4-8-SPF",
+      "name": "2x4x8 Stud Grade SPF",
+      "category": "lumber",
+      "subcategory": "framing",
+      "price": 4.29,
+      "proPrice": 3.89,
+      "unit": "each",
+      "inventory_status": "in_stock",
+      "inventory_qty": 2500,
+      "image_gradient": "linear-gradient(135deg, #8B4513, #A0522D)",
+      "brand": "Generic",
+      "dimensions": {
+        "length": "8 ft",
+        "width": "3.5 in",
+        "thickness": "1.5 in"
+      },
+      "description": "Product description text",
+      "specs": {
+        "Species": "Spruce-Pine-Fir (SPF)",
+        "Grade": "Stud"
+      }
+    }
+  ]
+}
+```
+
+### Inventory Status Enum
+
+| Value | UI Label | Color |
+|-------|----------|-------|
+| `in_stock` | In Stock | Green (#22c55e) |
+| `low_stock` | Low Stock | Amber (#f59e0b) |
+| `ship_to_store` | Ship to Store | Blue (#3b82f6) |
+| `unavailable` | Not Available | Gray (#9ca3af) |

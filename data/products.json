@@ -1,0 +1,819 @@
+{
+  "categories": [
+    {
+      "id": "lumber",
+      "name": "Lumber",
+      "slug": "lumber",
+      "description": "Dimensional lumber, studs, and framing materials"
+    },
+    {
+      "id": "engineered",
+      "name": "Engineered Products",
+      "slug": "engineered",
+      "description": "LVL, I-joists, glulam beams, and engineered wood"
+    },
+    {
+      "id": "sheetgoods",
+      "name": "Sheetgoods",
+      "slug": "sheetgoods",
+      "description": "Plywood, OSB, and panel products"
+    },
+    {
+      "id": "drywall",
+      "name": "Drywall & Sheetrock",
+      "slug": "drywall",
+      "description": "Drywall, cement board, and joint compounds"
+    },
+    {
+      "id": "siding",
+      "name": "Siding & Trim",
+      "slug": "siding",
+      "description": "Exterior siding, fascia, and trim boards"
+    },
+    {
+      "id": "decking",
+      "name": "Decking",
+      "slug": "decking",
+      "description": "Composite and wood deck boards, railing systems"
+    }
+  ],
+  "products": [
+    {
+      "id": "PRD-001",
+      "sku": "2X4-8-SPF",
+      "name": "2x4x8 Stud Grade SPF",
+      "category": "lumber",
+      "subcategory": "framing",
+      "price": 4.29,
+      "proPrice": 3.89,
+      "unit": "each",
+      "inventory_status": "in_stock",
+      "inventory_qty": 2500,
+      "image_gradient": "linear-gradient(135deg, #8B4513, #A0522D)",
+      "brand": "Generic",
+      "dimensions": {
+        "length": "8 ft",
+        "width": "3.5 in",
+        "thickness": "1.5 in"
+      },
+      "description": "Premium SPF stud-grade lumber, kiln-dried and perfect for framing applications.",
+      "specs": {
+        "Species": "Spruce-Pine-Fir (SPF)",
+        "Grade": "Stud",
+        "Treatment": "Kiln Dried",
+        "Moisture Content": "<19%"
+      }
+    },
+    {
+      "id": "PRD-002",
+      "sku": "2X6-8-SPF",
+      "name": "2x6x8 Stud Grade SPF",
+      "category": "lumber",
+      "subcategory": "framing",
+      "price": 6.49,
+      "proPrice": 5.89,
+      "unit": "each",
+      "inventory_status": "in_stock",
+      "inventory_qty": 1800,
+      "image_gradient": "linear-gradient(135deg, #8B4513, #A0522D)",
+      "brand": "Generic",
+      "dimensions": {
+        "length": "8 ft",
+        "width": "5.5 in",
+        "thickness": "1.5 in"
+      },
+      "description": "2x6 SPF lumber for wall framing and structural applications.",
+      "specs": {
+        "Species": "Spruce-Pine-Fir (SPF)",
+        "Grade": "Stud",
+        "Treatment": "Kiln Dried",
+        "Moisture Content": "<19%"
+      }
+    },
+    {
+      "id": "PRD-003",
+      "sku": "2X4-16-PT",
+      "name": "2x4x16 Pressure Treated",
+      "category": "lumber",
+      "subcategory": "pressure-treated",
+      "price": 12.99,
+      "proPrice": 11.49,
+      "unit": "each",
+      "inventory_status": "low_stock",
+      "inventory_qty": 85,
+      "image_gradient": "linear-gradient(135deg, #556B2F, #6B8E23)",
+      "brand": "Generic",
+      "dimensions": {
+        "length": "16 ft",
+        "width": "3.5 in",
+        "thickness": "1.5 in"
+      },
+      "description": "Ground contact rated pressure treated lumber for outdoor projects.",
+      "specs": {
+        "Species": "Southern Yellow Pine",
+        "Grade": "#2 & Better",
+        "Treatment": "ACQ Pressure Treated",
+        "Use": "Ground Contact (UC4A)"
+      }
+    },
+    {
+      "id": "PRD-004",
+      "sku": "2X12-12-DF",
+      "name": "2x12x12 Douglas Fir #2",
+      "category": "lumber",
+      "subcategory": "structural",
+      "price": 28.99,
+      "proPrice": 25.99,
+      "unit": "each",
+      "inventory_status": "in_stock",
+      "inventory_qty": 450,
+      "image_gradient": "linear-gradient(135deg, #CD853F, #DEB887)",
+      "brand": "Generic",
+      "dimensions": {
+        "length": "12 ft",
+        "width": "11.25 in",
+        "thickness": "1.5 in"
+      },
+      "description": "Heavy duty Douglas Fir dimensional lumber for headers, beams, and structural framing.",
+      "specs": {
+        "Species": "Douglas Fir-Larch",
+        "Grade": "#2 & Better",
+        "Treatment": "Kiln Dried",
+        "Moisture Content": "<19%"
+      }
+    },
+    {
+      "id": "PRD-005",
+      "sku": "4X4-8-PT",
+      "name": "4x4x8 Pressure Treated Post",
+      "category": "lumber",
+      "subcategory": "pressure-treated",
+      "price": 14.99,
+      "proPrice": 13.49,
+      "unit": "each",
+      "inventory_status": "in_stock",
+      "inventory_qty": 320,
+      "image_gradient": "linear-gradient(135deg, #556B2F, #6B8E23)",
+      "brand": "Generic",
+      "dimensions": {
+        "length": "8 ft",
+        "width": "3.5 in",
+        "thickness": "3.5 in"
+      },
+      "description": "Ground contact rated post for deck, fence, and outdoor structures.",
+      "specs": {
+        "Species": "Southern Yellow Pine",
+        "Grade": "#2 & Better",
+        "Treatment": "ACQ Pressure Treated",
+        "Use": "Ground Contact (UC4A)"
+      }
+    },
+    {
+      "id": "PRD-006",
+      "sku": "LVL-1.75X11.875-20",
+      "name": "1-3/4\" x 11-7/8\" x 20' LVL",
+      "category": "engineered",
+      "subcategory": "lvl",
+      "price": 89.99,
+      "proPrice": 79.99,
+      "unit": "each",
+      "inventory_status": "ship_to_store",
+      "inventory_qty": 0,
+      "image_gradient": "linear-gradient(135deg, #D2691E, #F4A460)",
+      "brand": "LP",
+      "dimensions": {
+        "length": "20 ft",
+        "width": "11.875 in",
+        "thickness": "1.75 in"
+      },
+      "description": "Laminated Veneer Lumber for headers, beams, and continuous spans.",
+      "specs": {
+        "Product": "LVL (Laminated Veneer Lumber)",
+        "Manufacturer": "LP Building Solutions",
+        "Fb": "2600 psi",
+        "E": "1.9 million psi"
+      }
+    },
+    {
+      "id": "PRD-007",
+      "sku": "IJO-11.875-24",
+      "name": "11-7/8\" I-Joist 24'",
+      "category": "engineered",
+      "subcategory": "i-joist",
+      "price": 42.99,
+      "proPrice": 38.99,
+      "unit": "each",
+      "inventory_status": "in_stock",
+      "inventory_qty": 180,
+      "image_gradient": "linear-gradient(135deg, #D2691E, #F4A460)",
+      "brand": "LP",
+      "dimensions": {
+        "length": "24 ft",
+        "width": "11.875 in",
+        "thickness": "N/A"
+      },
+      "description": "Engineered I-joists for floor and roof framing. Lightweight and strong.",
+      "specs": {
+        "Product": "I-Joist",
+        "Manufacturer": "LP Building Solutions",
+        "Series": "LPI 20",
+        "Flange Width": "1.75 in"
+      }
+    },
+    {
+      "id": "PRD-008",
+      "sku": "GLU-5.125X12-16",
+      "name": "5-1/8\" x 12\" x 16' Glulam Beam",
+      "category": "engineered",
+      "subcategory": "glulam",
+      "price": 289.99,
+      "proPrice": 259.99,
+      "unit": "each",
+      "inventory_status": "ship_to_store",
+      "inventory_qty": 0,
+      "image_gradient": "linear-gradient(135deg, #8B4513, #D2691E)",
+      "brand": "Anthony Forest",
+      "dimensions": {
+        "length": "16 ft",
+        "width": "12 in",
+        "thickness": "5.125 in"
+      },
+      "description": "Architectural grade glulam beam for exposed applications.",
+      "specs": {
+        "Product": "Glulam Beam",
+        "Grade": "24F-V4",
+        "Appearance": "Architectural",
+        "Species": "Douglas Fir"
+      }
+    },
+    {
+      "id": "PRD-009",
+      "sku": "RIM-1.75X11.875-12",
+      "name": "1-3/4\" x 11-7/8\" Rim Board 12'",
+      "category": "engineered",
+      "subcategory": "rim-board",
+      "price": 34.99,
+      "proPrice": 31.49,
+      "unit": "each",
+      "inventory_status": "in_stock",
+      "inventory_qty": 240,
+      "image_gradient": "linear-gradient(135deg, #D2691E, #F4A460)",
+      "brand": "LP",
+      "dimensions": {
+        "length": "12 ft",
+        "width": "11.875 in",
+        "thickness": "1.75 in"
+      },
+      "description": "LVL rim board to close off floor system perimeter.",
+      "specs": {
+        "Product": "Rim Board",
+        "Manufacturer": "LP Building Solutions",
+        "Material": "LVL"
+      }
+    },
+    {
+      "id": "PRD-010",
+      "sku": "CDX-0.5-4X8",
+      "name": "1/2\" CDX Plywood 4x8",
+      "category": "sheetgoods",
+      "subcategory": "plywood",
+      "price": 42.99,
+      "proPrice": 38.99,
+      "unit": "sheet",
+      "inventory_status": "in_stock",
+      "inventory_qty": 650,
+      "image_gradient": "linear-gradient(135deg, #DEB887, #F5DEB3)",
+      "brand": "Generic",
+      "dimensions": {
+        "length": "8 ft",
+        "width": "4 ft",
+        "thickness": "1/2 in"
+      },
+      "description": "Exterior rated CDX plywood for sheathing and subfloor applications.",
+      "specs": {
+        "Grade": "CDX",
+        "Exposure": "Exterior",
+        "Core": "5-Ply",
+        "Span Rating": "32/16"
+      }
+    },
+    {
+      "id": "PRD-011",
+      "sku": "CDX-0.75-4X8",
+      "name": "3/4\" CDX Plywood 4x8",
+      "category": "sheetgoods",
+      "subcategory": "plywood",
+      "price": 56.99,
+      "proPrice": 51.99,
+      "unit": "sheet",
+      "inventory_status": "in_stock",
+      "inventory_qty": 420,
+      "image_gradient": "linear-gradient(135deg, #DEB887, #F5DEB3)",
+      "brand": "Generic",
+      "dimensions": {
+        "length": "8 ft",
+        "width": "4 ft",
+        "thickness": "3/4 in"
+      },
+      "description": "3/4\" CDX for subfloor, sheathing, and heavy-duty applications.",
+      "specs": {
+        "Grade": "CDX",
+        "Exposure": "Exterior",
+        "Core": "7-Ply",
+        "Span Rating": "48/24"
+      }
+    },
+    {
+      "id": "PRD-012",
+      "sku": "OSB-0.4375-4X8",
+      "name": "7/16\" OSB Sheathing 4x8",
+      "category": "sheetgoods",
+      "subcategory": "osb",
+      "price": 18.99,
+      "proPrice": 16.99,
+      "unit": "sheet",
+      "inventory_status": "in_stock",
+      "inventory_qty": 1200,
+      "image_gradient": "linear-gradient(135deg, #D2691E, #CD853F)",
+      "brand": "LP",
+      "dimensions": {
+        "length": "8 ft",
+        "width": "4 ft",
+        "thickness": "7/16 in"
+      },
+      "description": "Oriented strand board for wall and roof sheathing.",
+      "specs": {
+        "Grade": "Sheathing",
+        "Exposure": "Exposure 1",
+        "Span Rating": "24/16",
+        "Manufacturer": "LP Building Solutions"
+      }
+    },
+    {
+      "id": "PRD-013",
+      "sku": "OSB-0.75-4X8-TG",
+      "name": "3/4\" OSB T&G Subfloor 4x8",
+      "category": "sheetgoods",
+      "subcategory": "osb",
+      "price": 34.99,
+      "proPrice": 31.49,
+      "unit": "sheet",
+      "inventory_status": "low_stock",
+      "inventory_qty": 95,
+      "image_gradient": "linear-gradient(135deg, #D2691E, #CD853F)",
+      "brand": "AdvanTech",
+      "dimensions": {
+        "length": "8 ft",
+        "width": "4 ft",
+        "thickness": "3/4 in"
+      },
+      "description": "Tongue and groove subfloor panel. Moisture resistant and squeak-free.",
+      "specs": {
+        "Grade": "Subfloor",
+        "Edge": "Tongue & Groove",
+        "Span Rating": "48 o.c.",
+        "Manufacturer": "Huber Engineered Woods"
+      }
+    },
+    {
+      "id": "PRD-014",
+      "sku": "SPLY-0.75-4X8-BC",
+      "name": "3/4\" BC Sanded Plywood 4x8",
+      "category": "sheetgoods",
+      "subcategory": "plywood",
+      "price": 72.99,
+      "proPrice": 66.99,
+      "unit": "sheet",
+      "inventory_status": "in_stock",
+      "inventory_qty": 180,
+      "image_gradient": "linear-gradient(135deg, #F5DEB3, #FAEBD7)",
+      "brand": "Generic",
+      "dimensions": {
+        "length": "8 ft",
+        "width": "4 ft",
+        "thickness": "3/4 in"
+      },
+      "description": "Sanded plywood with one good face for cabinets, shelving, and finish work.",
+      "specs": {
+        "Grade": "BC",
+        "Exposure": "Interior",
+        "Core": "7-Ply",
+        "Face": "Sanded Smooth"
+      }
+    },
+    {
+      "id": "PRD-015",
+      "sku": "DW-0.5-4X8",
+      "name": "1/2\" Drywall 4x8",
+      "category": "drywall",
+      "subcategory": "standard",
+      "price": 12.49,
+      "proPrice": 10.99,
+      "unit": "sheet",
+      "inventory_status": "in_stock",
+      "inventory_qty": 800,
+      "image_gradient": "linear-gradient(135deg, #E8E8E8, #D3D3D3)",
+      "brand": "USG",
+      "dimensions": {
+        "length": "8 ft",
+        "width": "4 ft",
+        "thickness": "1/2 in"
+      },
+      "description": "Standard 1/2\" gypsum board for walls and ceilings.",
+      "specs": {
+        "Type": "Standard",
+        "Core": "Gypsum",
+        "Edge": "Tapered",
+        "Manufacturer": "USG Sheetrock"
+      }
+    },
+    {
+      "id": "PRD-016",
+      "sku": "DW-0.625-4X8",
+      "name": "5/8\" Type X Fire-Rated Drywall 4x8",
+      "category": "drywall",
+      "subcategory": "fire-rated",
+      "price": 16.99,
+      "proPrice": 14.99,
+      "unit": "sheet",
+      "inventory_status": "in_stock",
+      "inventory_qty": 550,
+      "image_gradient": "linear-gradient(135deg, #E8E8E8, #C0C0C0)",
+      "brand": "USG",
+      "dimensions": {
+        "length": "8 ft",
+        "width": "4 ft",
+        "thickness": "5/8 in"
+      },
+      "description": "Fire-rated Type X gypsum board for code-required assemblies.",
+      "specs": {
+        "Type": "Type X Fire-Rated",
+        "Fire Rating": "1 Hour",
+        "Edge": "Tapered",
+        "Manufacturer": "USG Sheetrock"
+      }
+    },
+    {
+      "id": "PRD-017",
+      "sku": "DW-MR-0.5-4X8",
+      "name": "1/2\" Moisture Resistant Greenboard 4x8",
+      "category": "drywall",
+      "subcategory": "moisture-resistant",
+      "price": 18.99,
+      "proPrice": 16.99,
+      "unit": "sheet",
+      "inventory_status": "low_stock",
+      "inventory_qty": 120,
+      "image_gradient": "linear-gradient(135deg, #90EE90, #98FB98)",
+      "brand": "USG",
+      "dimensions": {
+        "length": "8 ft",
+        "width": "4 ft",
+        "thickness": "1/2 in"
+      },
+      "description": "Moisture resistant gypsum board for bathrooms and humid areas.",
+      "specs": {
+        "Type": "Moisture Resistant",
+        "Core": "Moisture Resistant Gypsum",
+        "Edge": "Tapered",
+        "Use": "High Humidity Areas"
+      }
+    },
+    {
+      "id": "PRD-018",
+      "sku": "CB-0.5-3X5",
+      "name": "1/2\" Cement Board 3x5",
+      "category": "drywall",
+      "subcategory": "cement-board",
+      "price": 14.99,
+      "proPrice": 13.49,
+      "unit": "sheet",
+      "inventory_status": "in_stock",
+      "inventory_qty": 280,
+      "image_gradient": "linear-gradient(135deg, #A9A9A9, #808080)",
+      "brand": "Hardie",
+      "dimensions": {
+        "length": "5 ft",
+        "width": "3 ft",
+        "thickness": "1/2 in"
+      },
+      "description": "Cement backer board for tile installations in wet areas.",
+      "specs": {
+        "Type": "Cement Board",
+        "Manufacturer": "James Hardie",
+        "Use": "Tile Substrate",
+        "Water Resistant": "Yes"
+      }
+    },
+    {
+      "id": "PRD-019",
+      "sku": "LP-SS-4X8",
+      "name": "LP SmartSide 4x8 Panel",
+      "category": "siding",
+      "subcategory": "panel",
+      "price": 44.99,
+      "proPrice": 40.99,
+      "unit": "sheet",
+      "inventory_status": "in_stock",
+      "inventory_qty": 320,
+      "image_gradient": "linear-gradient(135deg, #C4A484, #D2B48C)",
+      "brand": "LP",
+      "dimensions": {
+        "length": "8 ft",
+        "width": "4 ft",
+        "thickness": "7/16 in"
+      },
+      "description": "Engineered wood siding panel with deep cedar texture.",
+      "specs": {
+        "Product": "SmartSide",
+        "Manufacturer": "LP Building Solutions",
+        "Texture": "Deep Cedar",
+        "Warranty": "50 Year"
+      }
+    },
+    {
+      "id": "PRD-020",
+      "sku": "LP-SS-LAP-12",
+      "name": "LP SmartSide 8\" Lap Siding 16'",
+      "category": "siding",
+      "subcategory": "lap",
+      "price": 24.99,
+      "proPrice": 22.49,
+      "unit": "each",
+      "inventory_status": "in_stock",
+      "inventory_qty": 450,
+      "image_gradient": "linear-gradient(135deg, #C4A484, #D2B48C)",
+      "brand": "LP",
+      "dimensions": {
+        "length": "16 ft",
+        "width": "8 in",
+        "thickness": "7/16 in"
+      },
+      "description": "Prefinished lap siding with authentic wood texture.",
+      "specs": {
+        "Product": "SmartSide Lap",
+        "Exposure": "7 in",
+        "Finish": "Primed",
+        "Warranty": "50 Year"
+      }
+    },
+    {
+      "id": "PRD-021",
+      "sku": "HRD-PLANK-12",
+      "name": "HardiePlank 8.25\" x 12' Lap Siding",
+      "category": "siding",
+      "subcategory": "fiber-cement",
+      "price": 12.99,
+      "proPrice": 11.49,
+      "unit": "each",
+      "inventory_status": "ship_to_store",
+      "inventory_qty": 0,
+      "image_gradient": "linear-gradient(135deg, #778899, #B0C4DE)",
+      "brand": "Hardie",
+      "dimensions": {
+        "length": "12 ft",
+        "width": "8.25 in",
+        "thickness": "5/16 in"
+      },
+      "description": "Fiber cement lap siding with Cedarmill texture.",
+      "specs": {
+        "Product": "HardiePlank",
+        "Manufacturer": "James Hardie",
+        "Texture": "Cedarmill",
+        "Warranty": "30 Year"
+      }
+    },
+    {
+      "id": "PRD-022",
+      "sku": "PVC-TRIM-1X6-18",
+      "name": "1x6x18 PVC Trim Board",
+      "category": "siding",
+      "subcategory": "trim",
+      "price": 32.99,
+      "proPrice": 29.99,
+      "unit": "each",
+      "inventory_status": "in_stock",
+      "inventory_qty": 200,
+      "image_gradient": "linear-gradient(135deg, #FFFFFF, #F0F0F0)",
+      "brand": "AZEK",
+      "dimensions": {
+        "length": "18 ft",
+        "width": "5.5 in",
+        "thickness": "0.75 in"
+      },
+      "description": "Cellular PVC trim that won't rot, warp, or splinter.",
+      "specs": {
+        "Material": "Cellular PVC",
+        "Manufacturer": "AZEK",
+        "Paintable": "Yes",
+        "Warranty": "Lifetime Limited"
+      }
+    },
+    {
+      "id": "PRD-023",
+      "sku": "FASCIA-AL-6-12",
+      "name": "6\" Aluminum Fascia 12'",
+      "category": "siding",
+      "subcategory": "fascia",
+      "price": 18.99,
+      "proPrice": 16.99,
+      "unit": "each",
+      "inventory_status": "unavailable",
+      "inventory_qty": 0,
+      "image_gradient": "linear-gradient(135deg, #C0C0C0, #A9A9A9)",
+      "brand": "Generic",
+      "dimensions": {
+        "length": "12 ft",
+        "width": "6 in",
+        "thickness": "0.019 in"
+      },
+      "description": "Pre-finished aluminum fascia cover. White.",
+      "specs": {
+        "Material": "Aluminum",
+        "Color": "White",
+        "Gauge": ".019"
+      }
+    },
+    {
+      "id": "PRD-024",
+      "sku": "TREX-ENH-1X6-16",
+      "name": "Trex Enhance 1x6x16 Deck Board",
+      "category": "decking",
+      "subcategory": "composite",
+      "price": 42.99,
+      "proPrice": 38.99,
+      "unit": "each",
+      "inventory_status": "in_stock",
+      "inventory_qty": 380,
+      "image_gradient": "linear-gradient(135deg, #654321, #8B4513)",
+      "brand": "Trex",
+      "dimensions": {
+        "length": "16 ft",
+        "width": "5.5 in",
+        "thickness": "0.94 in"
+      },
+      "description": "Composite deck board with high-definition wood grain pattern.",
+      "specs": {
+        "Product": "Enhance Naturals",
+        "Color": "Toasted Sand",
+        "Material": "Composite",
+        "Warranty": "25 Year Fade & Stain"
+      }
+    },
+    {
+      "id": "PRD-025",
+      "sku": "TREX-SEL-1X6-20",
+      "name": "Trex Select 1x6x20 Deck Board",
+      "category": "decking",
+      "subcategory": "composite",
+      "price": 56.99,
+      "proPrice": 51.99,
+      "unit": "each",
+      "inventory_status": "low_stock",
+      "inventory_qty": 65,
+      "image_gradient": "linear-gradient(135deg, #4A3C2A, #6B5B4F)",
+      "brand": "Trex",
+      "dimensions": {
+        "length": "20 ft",
+        "width": "5.5 in",
+        "thickness": "0.94 in"
+      },
+      "description": "Premium composite decking with deep wood grain embossing.",
+      "specs": {
+        "Product": "Select",
+        "Color": "Saddle",
+        "Material": "Composite",
+        "Warranty": "25 Year Residential"
+      }
+    },
+    {
+      "id": "PRD-026",
+      "sku": "TIMB-EB-1X6-16",
+      "name": "TimberTech Edge 1x6x16 Deck Board",
+      "category": "decking",
+      "subcategory": "composite",
+      "price": 38.99,
+      "proPrice": 35.49,
+      "unit": "each",
+      "inventory_status": "in_stock",
+      "inventory_qty": 290,
+      "image_gradient": "linear-gradient(135deg, #8B7355, #A0826D)",
+      "brand": "TimberTech",
+      "dimensions": {
+        "length": "16 ft",
+        "width": "5.5 in",
+        "thickness": "0.94 in"
+      },
+      "description": "Scalloped-bottom composite board for easy installation.",
+      "specs": {
+        "Product": "Edge Prime+",
+        "Color": "Coconut Husk",
+        "Material": "Capped Polymer",
+        "Warranty": "25 Year"
+      }
+    },
+    {
+      "id": "PRD-027",
+      "sku": "PT-DECK-5/4X6-16",
+      "name": "5/4x6x16 Pressure Treated Deck Board",
+      "category": "decking",
+      "subcategory": "wood",
+      "price": 14.99,
+      "proPrice": 13.49,
+      "unit": "each",
+      "inventory_status": "in_stock",
+      "inventory_qty": 520,
+      "image_gradient": "linear-gradient(135deg, #556B2F, #6B8E23)",
+      "brand": "Generic",
+      "dimensions": {
+        "length": "16 ft",
+        "width": "5.5 in",
+        "thickness": "1 in"
+      },
+      "description": "Pressure treated radius-edge deck board for outdoor decks.",
+      "specs": {
+        "Species": "Southern Yellow Pine",
+        "Treatment": "ACQ Pressure Treated",
+        "Grade": "#2 & Better",
+        "Edge": "Radius Edge"
+      }
+    },
+    {
+      "id": "PRD-028",
+      "sku": "RAIL-TREX-8",
+      "name": "Trex Transcend Railing Kit 8'",
+      "category": "decking",
+      "subcategory": "railing",
+      "price": 189.99,
+      "proPrice": 174.99,
+      "unit": "kit",
+      "inventory_status": "ship_to_store",
+      "inventory_qty": 0,
+      "image_gradient": "linear-gradient(135deg, #FFFFFF, #E8E8E8)",
+      "brand": "Trex",
+      "dimensions": {
+        "length": "8 ft",
+        "width": "N/A",
+        "thickness": "N/A"
+      },
+      "description": "Complete railing kit with top rail, bottom rail, and square balusters.",
+      "specs": {
+        "Product": "Transcend Railing",
+        "Color": "Classic White",
+        "Style": "Square Balusters",
+        "Includes": "Top Rail, Bottom Rail, Balusters, Hardware"
+      }
+    },
+    {
+      "id": "PRD-029",
+      "sku": "2X10-12-SPF",
+      "name": "2x10x12 #2 SPF",
+      "category": "lumber",
+      "subcategory": "structural",
+      "price": 18.99,
+      "proPrice": 16.99,
+      "unit": "each",
+      "inventory_status": "in_stock",
+      "inventory_qty": 340,
+      "image_gradient": "linear-gradient(135deg, #8B4513, #A0522D)",
+      "brand": "Generic",
+      "dimensions": {
+        "length": "12 ft",
+        "width": "9.25 in",
+        "thickness": "1.5 in"
+      },
+      "description": "Dimensional lumber for floor joists, headers, and rafters.",
+      "specs": {
+        "Species": "Spruce-Pine-Fir (SPF)",
+        "Grade": "#2 & Better",
+        "Treatment": "Kiln Dried",
+        "Moisture Content": "<19%"
+      }
+    },
+    {
+      "id": "PRD-030",
+      "sku": "1X4-8-SPF",
+      "name": "1x4x8 Furring Strip",
+      "category": "lumber",
+      "subcategory": "furring",
+      "price": 2.49,
+      "proPrice": 2.19,
+      "unit": "each",
+      "inventory_status": "in_stock",
+      "inventory_qty": 1500,
+      "image_gradient": "linear-gradient(135deg, #DEB887, #D2B48C)",
+      "brand": "Generic",
+      "dimensions": {
+        "length": "8 ft",
+        "width": "3.5 in",
+        "thickness": "0.75 in"
+      },
+      "description": "Common furring strip for wall strapping and spacing.",
+      "specs": {
+        "Species": "Spruce-Pine-Fir (SPF)",
+        "Grade": "Utility",
+        "Treatment": "Kiln Dried"
+      }
+    }
+  ]
+}

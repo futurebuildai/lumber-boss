@@ -16,13 +16,25 @@ Building the complete frontend with mock data to validate UX before backend deve
 
 ---
 
-## Phase 2: Product Catalog (Next)
+## Phase 2: Product Catalog ✅
 
-- [ ] Product listing page (PLP)
-- [ ] Product detail page (PDP)
-- [ ] Real-time inventory indicators
-- [ ] Search functionality
-- [ ] Category filtering
+- [x] Product listing page (PLP)
+- [x] Product detail page (PDP)
+- [x] Real-time inventory indicators
+- [x] Search functionality
+- [x] Category filtering
+
+---
+
+## Phase 2.5: Vanilla-Plus Architecture ✅
+
+- [x] Create `src/services/api.js` — fetch wrapper
+- [x] Create `src/services/cart.js` — state management
+- [x] Create `src/components/lb-inventory-badge.js`
+- [x] Create `src/components/lb-toast.js`
+- [x] Create `src/components/lb-product-card.js`
+- [x] Create `src/app.js` — ES Module entry point
+- [x] Update `products.html` and `product.html` with module scripts
 
 ---
 

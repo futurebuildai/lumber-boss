@@ -39,7 +39,8 @@ Lumber Boss is a modern e-commerce platform for **LBM (Lumber & Building Materia
 
 ## Technical Context
 
-- **Frontend:** Vanilla HTML/CSS/JS (no framework)
+- **Frontend:** Vanilla HTML/CSS/JS (Vanilla-Plus architecture)
+- **Architecture Docs:** [.system-docs/](../.system-docs/) (Source of Truth)
 - **Backend:** Not built yet (see [ARCHITECTURE.md](../docs/ARCHITECTURE.md))
 - **Hosting:** Local dev only, future: Vercel + Cloud Run
 - **ERP Integration:** Future: Epicor BisTrack, TOOLBX API
@@ -51,9 +52,16 @@ Lumber Boss is a modern e-commerce platform for **LBM (Lumber & Building Materia
 - [x] My Account Portal (10 sections)
 - [x] Visual redesign (Slate/Orange)
 - [x] Backend architecture docs
+- [x] Product catalog (PLP + PDP)
+- [x] Real-time inventory indicators
+- [x] Search functionality
+- [x] Category filtering
+- [x] Vanilla-Plus Web Components (Phase 1)
+- [x] ES Module services (api.js, cart.js)
 
 ### Next Up
-- [ ] Product catalog pages
-- [ ] Real-time inventory indicators
+- [ ] Cart & Checkout flow
+- [ ] Continue component migration (lb-header, lb-footer)
 - [ ] Backend API (mock → real)
 - [ ] ERP integration
+

@@ -1,0 +1,606 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product | Lumber Boss</title>
+    <meta name="description" content="View product details, specifications, and pricing.">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap"
+        rel="stylesheet">
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="products.css">
+</head>
+
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container header-inner">
+            <!-- Logo -->
+            <a href="/" class="logo">
+                <div class="logo-icon">⬡</div>
+                <div class="logo-text">
+                    <span class="logo-name">LUMBER BOSS</span>
+                    <span class="logo-tagline">Pro Materials. Delivered.</span>
+                </div>
+            </a>
+
+            <!-- Search Bar -->
+            <div class="search-bar">
+                <input type="text" placeholder="Search products..." id="search-input">
+                <button class="search-btn" aria-label="Search" onclick="searchProducts()">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="11" cy="11" r="8"></circle>
+                        <path d="M21 21l-4.35-4.35"></path>
+                    </svg>
+                </button>
+            </div>
+
+            <!-- Utility Nav -->
+            <nav class="utility-nav">
+                <a href="account.html" class="utility-link">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                        <circle cx="12" cy="7" r="4"></circle>
+                    </svg>
+                    <span>Account</span>
+                </a>
+                <a href="#" class="utility-link">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                        <polyline points="14 2 14 8 20 8"></polyline>
+                        <line x1="16" y1="13" x2="8" y2="13"></line>
+                        <line x1="16" y1="17" x2="8" y2="17"></line>
+                    </svg>
+                    <span>Quote</span>
+                </a>
+                <a href="#" class="utility-link cart-link">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="9" cy="21" r="1"></circle>
+                        <circle cx="20" cy="21" r="1"></circle>
+                        <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+                    </svg>
+                    <span>Cart</span>
+                    <span class="cart-count">0</span>
+                </a>
+                <button class="menu-toggle" aria-label="Menu" id="menu-toggle">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <line x1="3" y1="12" x2="21" y2="12"></line>
+                        <line x1="3" y1="6" x2="21" y2="6"></line>
+                        <line x1="3" y1="18" x2="21" y2="18"></line>
+                    </svg>
+                </button>
+            </nav>
+        </div>
+
+        <!-- Main Nav -->
+        <nav class="main-nav">
+            <div class="container main-nav-inner">
+                <ul class="nav-links">
+                    <li><a href="products.html">Products</a></li>
+                    <li><a href="index.html#services">Services</a></li>
+                    <li><a href="index.html#showrooms">Showrooms</a></li>
+                    <li><a href="index.html#about">About Us</a></li>
+                    <li><a href="index.html#contact">Contact</a></li>
+                </ul>
+                <div class="location-picker">
+                    <button class="location-btn active" data-location="oakdale">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                            <circle cx="12" cy="10" r="3"></circle>
+                        </svg>
+                        Oakdale
+                    </button>
+                    <button class="location-btn" data-location="pinewood">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                            <circle cx="12" cy="10" r="3"></circle>
+                        </svg>
+                        Pinewood
+                    </button>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Mobile Nav Drawer -->
+    <aside class="mobile-nav" id="mobile-nav">
+        <div class="mobile-nav-header">
+            <span class="mobile-nav-title">Menu</span>
+            <button class="mobile-nav-close" id="mobile-nav-close" aria-label="Close menu">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <line x1="18" y1="6" x2="6" y2="18"></line>
+                    <line x1="6" y1="6" x2="18" y2="18"></line>
+                </svg>
+            </button>
+        </div>
+        <ul class="mobile-nav-links">
+            <li><a href="products.html">Products</a></li>
+            <li><a href="index.html#services">Services</a></li>
+            <li><a href="index.html#showrooms">Showrooms</a></li>
+            <li><a href="index.html#about">About Us</a></li>
+            <li><a href="index.html#contact">Contact</a></li>
+        </ul>
+        <div class="mobile-nav-location">
+            <p>Select Location:</p>
+            <button class="btn btn-outline" data-location="oakdale">Oakdale</button>
+            <button class="btn btn-outline" data-location="pinewood">Pinewood</button>
+        </div>
+    </aside>
+    <div class="mobile-nav-overlay" id="mobile-nav-overlay"></div>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <nav class="breadcrumb" aria-label="Breadcrumb">
+                <ol>
+                    <li><a href="/">Home</a></li>
+                    <li><a href="products.html">Products</a></li>
+                    <li><a href="#" id="breadcrumb-category">Category</a></li>
+                    <li><span id="breadcrumb-product">Product</span></li>
+                </ol>
+            </nav>
+        </div>
+    </section>
+
+    <!-- Product Detail -->
+    <section class="product-detail-section">
+        <div class="container">
+            <!-- Loading State -->
+            <div class="loading-state" id="loading-state">
+                <div class="loading-spinner"></div>
+                <p>Loading product...</p>
+            </div>
+
+            <!-- Product Content -->
+            <div class="product-detail-grid" id="product-content" style="display: none;">
+                <!-- Product Gallery -->
+                <div class="product-gallery">
+                    <div class="product-gallery-image" id="product-image"></div>
+                </div>
+
+                <!-- Product Details -->
+                <div class="product-details">
+                    <span class="product-brand" id="product-brand">Brand</span>
+                    <h1 class="product-name" id="product-name">Product Name</h1>
+                    <span class="product-sku" id="product-sku">SKU: XXX</span>
+
+                    <div class="product-pricing">
+                        <div style="display: flex; align-items: baseline; gap: var(--space-md);">
+                            <span class="product-price" id="product-price">$0.00</span>
+                            <span class="product-unit" id="product-unit">/each</span>
+                        </div>
+                        <span class="product-pro-price" id="product-pro-price">Pro Price: $0.00</span>
+                        <span class="inventory-badge" id="inventory-badge">In Stock</span>
+                    </div>
+
+                    <p class="product-description" id="product-description">
+                        Product description goes here.
+                    </p>
+
+                    <div class="product-actions">
+                        <div class="quantity-selector">
+                            <button class="quantity-btn" onclick="decrementQuantity()">−</button>
+                            <input type="number" class="quantity-input" id="quantity-input" value="1" min="1">
+                            <button class="quantity-btn" onclick="incrementQuantity()">+</button>
+                        </div>
+                        <button class="btn btn-primary" id="add-to-cart-btn" onclick="addProductToCart()">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <circle cx="9" cy="21" r="1"></circle>
+                                <circle cx="20" cy="21" r="1"></circle>
+                                <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+                            </svg>
+                            Add to Cart
+                        </button>
+                    </div>
+
+                    <div class="product-specs">
+                        <h3>Specifications</h3>
+                        <table class="specs-table" id="specs-table">
+                            <!-- Specs populated by JS -->
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Error State -->
+            <div class="empty-state" id="error-state" style="display: none;">
+                <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                    <circle cx="12" cy="12" r="10"></circle>
+                    <line x1="12" y1="8" x2="12" y2="12"></line>
+                    <line x1="12" y1="16" x2="12.01" y2="16"></line>
+                </svg>
+                <h3>Product not found</h3>
+                <p>The product you're looking for doesn't exist or has been removed.</p>
+                <a href="products.html" class="btn btn-primary">Browse All Products</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Related Products -->
+    <section class="related-products" id="related-products" style="display: none;">
+        <div class="container">
+            <h2 class="section-title">Related Products</h2>
+            <div class="product-grid" id="related-grid">
+                <!-- Related products populated by JS -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer" id="contact">
+        <div class="container footer-grid">
+            <div class="footer-col">
+                <div class="footer-logo">
+                    <div class="logo-icon">⬡</div>
+                    <span>LUMBER BOSS</span>
+                </div>
+                <p class="footer-tagline">Pro Materials. Delivered.</p>
+                <div class="social-links">
+                    <a href="#" aria-label="Facebook">📘</a>
+                    <a href="#" aria-label="Instagram">📷</a>
+                    <a href="#" aria-label="YouTube">🎬</a>
+                </div>
+            </div>
+
+            <div class="footer-col">
+                <h4>Oakdale</h4>
+                <address>
+                    1200 Timber Lane<br>
+                    Oakdale, TX 75001<br>
+                    <a href="tel:5551234567">(555) 123-4567</a>
+                </address>
+                <p class="hours">Mon-Fri 7am-5pm<br>Sat 8am-4pm</p>
+            </div>
+
+            <div class="footer-col">
+                <h4>Pinewood</h4>
+                <address>
+                    4500 Forest Drive<br>
+                    Pinewood, TX 75002<br>
+                    <a href="tel:5559876543">(555) 987-6543</a>
+                </address>
+                <p class="hours">Mon-Fri 7am-5pm<br>Sat 8am-4pm</p>
+            </div>
+
+            <div class="footer-col">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="products.html">Products</a></li>
+                    <li><a href="index.html#services">Services</a></li>
+                    <li><a href="index.html#showrooms">Showrooms</a></li>
+                    <li><a href="index.html#about">About Us</a></li>
+                    <li><a href="#">Careers</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col">
+                <h4>Pro Tools</h4>
+                <ul>
+                    <li><a href="account.html">Sign In</a></li>
+                    <li><a href="#">Pay Invoice</a></li>
+                    <li><a href="#">Request Quote</a></li>
+                    <li><a href="#">Open Account</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <div class="container">
+                <p>&copy; 2024 Lumber Boss. All rights reserved.</p>
+                <div class="footer-legal">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Web Components (ES Modules) -->
+    <script type="module" src="./src/app.js"></script>
+
+    <script>
+        /* ========================================
+           PRODUCT DETAIL PAGE JAVASCRIPT
+           ======================================== */
+
+        let currentProduct = null;
+        let allProducts = [];
+        let allCategories = [];
+
+        // DOM Elements
+        const loadingState = document.getElementById('loading-state');
+        const productContent = document.getElementById('product-content');
+        const errorState = document.getElementById('error-state');
+        const relatedProducts = document.getElementById('related-products');
+
+        // Initialize
+        document.addEventListener('DOMContentLoaded', init);
+
+        async function init() {
+            showLoading(true);
+
+            const urlParams = new URLSearchParams(window.location.search);
+            const sku = urlParams.get('sku');
+
+            if (!sku) {
+                showError();
+                return;
+            }
+
+            try {
+                await loadProducts();
+                currentProduct = allProducts.find(p => p.sku === sku);
+
+                if (!currentProduct) {
+                    showError();
+                    return;
+                }
+
+                renderProduct();
+                renderRelatedProducts();
+                setupEventListeners();
+                updateCartCount();
+            } catch (error) {
+                console.error('Error loading product:', error);
+                showError();
+            }
+
+            showLoading(false);
+        }
+
+        async function loadProducts() {
+            const response = await fetch('data/products.json');
+            if (!response.ok) {
+                throw new Error('Failed to load products');
+            }
+            const data = await response.json();
+            allProducts = data.products;
+            allCategories = data.categories;
+        }
+
+        function renderProduct() {
+            // Update page title
+            document.title = `${currentProduct.name} | Lumber Boss`;
+
+            // Update breadcrumb
+            const category = allCategories.find(c => c.id === currentProduct.category);
+            if (category) {
+                document.getElementById('breadcrumb-category').textContent = category.name;
+                document.getElementById('breadcrumb-category').href = `products.html?category=${category.id}`;
+            }
+            document.getElementById('breadcrumb-product').textContent = currentProduct.name;
+
+            // Update product details
+            document.getElementById('product-image').style.background = currentProduct.image_gradient;
+            document.getElementById('product-brand').textContent = currentProduct.brand;
+            document.getElementById('product-name').textContent = currentProduct.name;
+            document.getElementById('product-sku').textContent = `SKU: ${currentProduct.sku}`;
+            document.getElementById('product-price').textContent = `$${currentProduct.price.toFixed(2)}`;
+            document.getElementById('product-unit').textContent = `/${currentProduct.unit}`;
+            document.getElementById('product-pro-price').textContent = `Pro Price: $${currentProduct.proPrice.toFixed(2)}`;
+            document.getElementById('product-description').textContent = currentProduct.description;
+
+            // Update inventory badge
+            const badge = document.getElementById('inventory-badge');
+            badge.className = `inventory-badge ${currentProduct.inventory_status}`;
+            const labels = {
+                'in_stock': 'In Stock',
+                'low_stock': 'Low Stock',
+                'ship_to_store': 'Ship to Store',
+                'unavailable': 'Not Available'
+            };
+            badge.textContent = labels[currentProduct.inventory_status];
+
+            // Disable add to cart if unavailable
+            const addToCartBtn = document.getElementById('add-to-cart-btn');
+            if (currentProduct.inventory_status === 'unavailable') {
+                addToCartBtn.disabled = true;
+                addToCartBtn.textContent = 'Not Available';
+            }
+
+            // Render specs
+            const specsTable = document.getElementById('specs-table');
+            specsTable.innerHTML = Object.entries(currentProduct.specs).map(([key, value]) => `
+        <tr>
+          <th>${key}</th>
+          <td>${value}</td>
+        </tr>
+      `).join('');
+
+            // Add dimensions to specs
+            if (currentProduct.dimensions) {
+                const dims = currentProduct.dimensions;
+                const dimsHTML = `
+          <tr>
+            <th>Dimensions</th>
+            <td>${dims.thickness} × ${dims.width} × ${dims.length}</td>
+          </tr>
+        `;
+                specsTable.innerHTML = dimsHTML + specsTable.innerHTML;
+            }
+
+            productContent.style.display = 'grid';
+        }
+
+        function renderRelatedProducts() {
+            // Get products from same category
+            const related = allProducts
+                .filter(p => p.category === currentProduct.category && p.sku !== currentProduct.sku)
+                .slice(0, 4);
+
+            if (related.length === 0) return;
+
+            const relatedGrid = document.getElementById('related-grid');
+            relatedGrid.innerHTML = related.map(product => `
+        <a href="product.html?sku=${product.sku}" class="product-card">
+          <div class="product-image">
+            <div class="product-image-gradient" style="background: ${product.image_gradient};"></div>
+          </div>
+          <div class="product-info">
+            <span class="product-brand">${product.brand}</span>
+            <h3 class="product-name">${product.name}</h3>
+            <span class="product-sku">SKU: ${product.sku}</span>
+            <div class="product-pricing">
+              <span class="product-price">$${product.price.toFixed(2)}</span>
+              <span class="product-unit">/${product.unit}</span>
+            </div>
+            <div class="product-footer">
+              ${getInventoryBadge(product.inventory_status)}
+            </div>
+          </div>
+        </a>
+      `).join('');
+
+            relatedProducts.style.display = 'block';
+        }
+
+        function getInventoryBadge(status) {
+            const labels = {
+                'in_stock': 'In Stock',
+                'low_stock': 'Low Stock',
+                'ship_to_store': 'Ship to Store',
+                'unavailable': 'Not Available'
+            };
+            return `<span class="inventory-badge ${status}">${labels[status]}</span>`;
+        }
+
+        function showLoading(show) {
+            loadingState.style.display = show ? 'block' : 'none';
+        }
+
+        function showError() {
+            loadingState.style.display = 'none';
+            productContent.style.display = 'none';
+            errorState.style.display = 'block';
+        }
+
+        function setupEventListeners() {
+            // Mobile nav toggle
+            const menuToggle = document.getElementById('menu-toggle');
+            const mobileNav = document.getElementById('mobile-nav');
+            const mobileNavClose = document.getElementById('mobile-nav-close');
+            const mobileNavOverlay = document.getElementById('mobile-nav-overlay');
+
+            if (menuToggle) {
+                menuToggle.addEventListener('click', () => {
+                    mobileNav.classList.add('open');
+                    mobileNavOverlay.classList.add('open');
+                    document.body.style.overflow = 'hidden';
+                });
+            }
+
+            if (mobileNavClose) {
+                mobileNavClose.addEventListener('click', closeMobileNav);
+            }
+
+            if (mobileNavOverlay) {
+                mobileNavOverlay.addEventListener('click', closeMobileNav);
+            }
+
+            // Search
+            const searchInput = document.getElementById('search-input');
+            searchInput.addEventListener('keypress', (e) => {
+                if (e.key === 'Enter') {
+                    searchProducts();
+                }
+            });
+        }
+
+        function closeMobileNav() {
+            const mobileNav = document.getElementById('mobile-nav');
+            const mobileNavOverlay = document.getElementById('mobile-nav-overlay');
+            mobileNav.classList.remove('open');
+            mobileNavOverlay.classList.remove('open');
+            document.body.style.overflow = '';
+        }
+
+        // Quantity Controls
+        function incrementQuantity() {
+            const input = document.getElementById('quantity-input');
+            input.value = parseInt(input.value) + 1;
+        }
+
+        function decrementQuantity() {
+            const input = document.getElementById('quantity-input');
+            const current = parseInt(input.value);
+            if (current > 1) {
+                input.value = current - 1;
+            }
+        }
+
+        // Add to Cart
+        function addProductToCart() {
+            if (!currentProduct || currentProduct.inventory_status === 'unavailable') return;
+
+            const quantity = parseInt(document.getElementById('quantity-input').value);
+
+            // Get current cart from localStorage
+            let cart = JSON.parse(localStorage.getItem('lumberBossCart') || '[]');
+
+            // Check if product already in cart
+            const existingIndex = cart.findIndex(item => item.sku === currentProduct.sku);
+
+            if (existingIndex > -1) {
+                cart[existingIndex].quantity += quantity;
+            } else {
+                cart.push({
+                    sku: currentProduct.sku,
+                    name: currentProduct.name,
+                    price: currentProduct.price,
+                    unit: currentProduct.unit,
+                    quantity: quantity
+                });
+            }
+
+            // Save to localStorage
+            localStorage.setItem('lumberBossCart', JSON.stringify(cart));
+
+            // Update cart count
+            updateCartCount();
+
+            // Show feedback
+            showAddToCartFeedback();
+        }
+
+        function updateCartCount() {
+            const cart = JSON.parse(localStorage.getItem('lumberBossCart') || '[]');
+            const totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
+
+            document.querySelectorAll('.cart-count').forEach(el => {
+                el.textContent = totalItems;
+            });
+        }
+
+        function showAddToCartFeedback() {
+            const btn = document.getElementById('add-to-cart-btn');
+            const originalHTML = btn.innerHTML;
+            btn.innerHTML = '✓ Added to Cart';
+            btn.style.background = '#22c55e';
+
+            setTimeout(() => {
+                btn.innerHTML = originalHTML;
+                btn.style.background = '';
+            }, 1500);
+        }
+
+        function searchProducts() {
+            const query = document.getElementById('search-input').value;
+            if (query) {
+                window.location.href = `products.html?search=${encodeURIComponent(query)}`;
+            }
+        }
+    </script>
+</body>
+
+</html>

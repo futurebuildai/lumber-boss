@@ -1,0 +1,701 @@
+{
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "$id": "lumber-boss-component-registry",
+    "version": "1.0.0",
+    "generatedAt": "2024-12-22T22:30:00Z",
+    "description": "Registry of all UI components in the Lumber Boss application. This is the source of truth for component inventory and serves as the target for Web Component migration.",
+    "pages": [
+        {
+            "id": "index",
+            "name": "Homepage",
+            "file": "index.html",
+            "scripts": [
+                "main.js"
+            ],
+            "styles": [
+                "style.css"
+            ],
+            "status": "complete"
+        },
+        {
+            "id": "products",
+            "name": "Product Listing Page",
+            "file": "products.html",
+            "scripts": [
+                "products.js"
+            ],
+            "styles": [
+                "style.css",
+                "products.css"
+            ],
+            "status": "complete"
+        },
+        {
+            "id": "product",
+            "name": "Product Detail Page",
+            "file": "product.html",
+            "scripts": [
+                "inline"
+            ],
+            "styles": [
+                "style.css",
+                "products.css"
+            ],
+            "status": "complete"
+        },
+        {
+            "id": "account",
+            "name": "My Account Portal",
+            "file": "account.html",
+            "scripts": [
+                "account.js"
+            ],
+            "styles": [
+                "style.css",
+                "account.css"
+            ],
+            "status": "complete"
+        }
+    ],
+    "components": [
+        {
+            "id": "header",
+            "name": "Site Header",
+            "targetTag": "lb-header",
+            "currentSelector": ".header",
+            "locations": [
+                "index.html",
+                "products.html",
+                "product.html",
+                "account.html"
+            ],
+            "props": {
+                "location": {
+                    "type": "string",
+                    "enum": [
+                        "oakdale",
+                        "pinewood"
+                    ],
+                    "default": "oakdale",
+                    "description": "Selected store location"
+                },
+                "cartCount": {
+                    "type": "number",
+                    "default": 0,
+                    "description": "Number of items in cart"
+                }
+            },
+            "events": [
+                "location-change",
+                "cart-click",
+                "search-submit"
+            ],
+            "priority": "high",
+            "migrationNotes": "Extract logo, search bar, utility nav, and main nav into single component"
+        },
+        {
+            "id": "mobile-nav",
+            "name": "Mobile Navigation Drawer",
+            "targetTag": "lb-mobile-nav",
+            "currentSelector": ".mobile-nav",
+            "locations": [
+                "index.html",
+                "products.html",
+                "product.html"
+            ],
+            "props": {
+                "open": {
+                    "type": "boolean",
+                    "default": false
+                },
+                "location": {
+                    "type": "string",
+                    "enum": [
+                        "oakdale",
+                        "pinewood"
+                    ]
+                }
+            },
+            "events": [
+                "close",
+                "location-change"
+            ],
+            "priority": "medium"
+        },
+        {
+            "id": "location-modal",
+            "name": "Location Selection Modal",
+            "targetTag": "lb-location-modal",
+            "currentSelector": "#location-modal",
+            "locations": [
+                "index.html"
+            ],
+            "props": {
+                "open": {
+                    "type": "boolean",
+                    "default": true
+                }
+            },
+            "events": [
+                "location-selected"
+            ],
+            "priority": "low"
+        },
+        {
+            "id": "product-card",
+            "name": "Product Card",
+            "targetTag": "lb-product-card",
+            "currentSelector": ".product-card",
+            "locations": [
+                "products.html",
+                "product.html"
+            ],
+            "props": {
+                "sku": {
+                    "type": "string",
+                    "required": true,
+                    "description": "Product SKU for data fetching"
+                },
+                "product": {
+                    "type": "object",
+                    "description": "Full product object (alternative to sku)"
+                },
+                "variant": {
+                    "type": "string",
+                    "enum": [
+                        "default",
+                        "compact",
+                        "featured"
+                    ],
+                    "default": "default"
+                }
+            },
+            "events": [
+                "add-to-cart"
+            ],
+            "priority": "high",
+            "migrationNotes": "Used in PLP grid, PDP related products, Quick Reorder section",
+            "implemented": true,
+            "implementedFile": "src/components/lb-product-card.js"
+        },
+        {
+            "id": "inventory-badge",
+            "name": "Inventory Status Badge",
+            "targetTag": "lb-inventory-badge",
+            "currentSelector": ".inventory-badge",
+            "locations": [
+                "products.html",
+                "product.html"
+            ],
+            "props": {
+                "status": {
+                    "type": "string",
+                    "enum": [
+                        "in_stock",
+                        "low_stock",
+                        "ship_to_store",
+                        "unavailable"
+                    ],
+                    "required": true
+                }
+            },
+            "events": [],
+            "priority": "high",
+            "migrationNotes": "First candidate for Web Component extraction - simple, self-contained",
+            "implemented": true,
+            "implementedFile": "src/components/lb-inventory-badge.js"
+        },
+        {
+            "id": "category-pill",
+            "name": "Category Filter Pill",
+            "targetTag": "lb-category-pill",
+            "currentSelector": ".category-pill",
+            "locations": [
+                "products.html"
+            ],
+            "props": {
+                "category": {
+                    "type": "string",
+                    "required": true
+                },
+                "active": {
+                    "type": "boolean",
+                    "default": false
+                }
+            },
+            "events": [
+                "click"
+            ],
+            "priority": "medium"
+        },
+        {
+            "id": "category-card",
+            "name": "Category Card (Homepage)",
+            "targetTag": "lb-category-card",
+            "currentSelector": ".category-card",
+            "locations": [
+                "index.html"
+            ],
+            "props": {
+                "category": {
+                    "type": "string",
+                    "required": true
+                },
+                "href": {
+                    "type": "string"
+                }
+            },
+            "events": [],
+            "priority": "low"
+        },
+        {
+            "id": "recent-order-card",
+            "name": "Quick Reorder Card",
+            "targetTag": "lb-reorder-card",
+            "currentSelector": ".recent-order-card",
+            "locations": [
+                "index.html"
+            ],
+            "props": {
+                "productId": {
+                    "type": "string",
+                    "required": true
+                },
+                "quantity": {
+                    "type": "number",
+                    "default": 1
+                },
+                "lastOrdered": {
+                    "type": "string",
+                    "format": "date"
+                }
+            },
+            "events": [
+                "reorder"
+            ],
+            "priority": "medium"
+        },
+        {
+            "id": "quantity-selector",
+            "name": "Quantity Selector",
+            "targetTag": "lb-quantity-selector",
+            "currentSelector": ".quantity-selector",
+            "locations": [
+                "product.html"
+            ],
+            "props": {
+                "value": {
+                    "type": "number",
+                    "default": 1
+                },
+                "min": {
+                    "type": "number",
+                    "default": 1
+                },
+                "max": {
+                    "type": "number",
+                    "default": 9999
+                }
+            },
+            "events": [
+                "change"
+            ],
+            "priority": "medium"
+        },
+        {
+            "id": "showroom-card",
+            "name": "Showroom Card",
+            "targetTag": "lb-showroom-card",
+            "currentSelector": ".showroom-card",
+            "locations": [
+                "index.html"
+            ],
+            "props": {
+                "showroom": {
+                    "type": "string",
+                    "enum": [
+                        "doors",
+                        "windows",
+                        "kitchen"
+                    ]
+                }
+            },
+            "events": [],
+            "priority": "low"
+        },
+        {
+            "id": "service-card",
+            "name": "Service Card",
+            "targetTag": "lb-service-card",
+            "currentSelector": ".service-card",
+            "locations": [
+                "index.html"
+            ],
+            "props": {
+                "icon": {
+                    "type": "string"
+                },
+                "title": {
+                    "type": "string"
+                },
+                "description": {
+                    "type": "string"
+                }
+            },
+            "events": [],
+            "priority": "low"
+        },
+        {
+            "id": "footer",
+            "name": "Site Footer",
+            "targetTag": "lb-footer",
+            "currentSelector": ".footer",
+            "locations": [
+                "index.html",
+                "products.html",
+                "product.html",
+                "account.html"
+            ],
+            "props": {},
+            "events": [],
+            "priority": "medium"
+        },
+        {
+            "id": "toast",
+            "name": "Toast Notification",
+            "targetTag": "lb-toast",
+            "currentSelector": ".toast",
+            "locations": [
+                "main.js (dynamic)"
+            ],
+            "props": {
+                "message": {
+                    "type": "string",
+                    "required": true
+                },
+                "type": {
+                    "type": "string",
+                    "enum": [
+                        "info",
+                        "success",
+                        "warning",
+                        "error"
+                    ],
+                    "default": "info"
+                },
+                "duration": {
+                    "type": "number",
+                    "default": 3000
+                }
+            },
+            "events": [
+                "dismiss"
+            ],
+            "priority": "high",
+            "migrationNotes": "Currently created dynamically in main.js showToast function",
+            "implemented": true,
+            "implementedFile": "src/components/lb-toast.js"
+        },
+        {
+            "id": "filters-sidebar",
+            "name": "Product Filters Sidebar",
+            "targetTag": "lb-filters-sidebar",
+            "currentSelector": ".filters-sidebar",
+            "locations": [
+                "products.html"
+            ],
+            "props": {
+                "availability": {
+                    "type": "array",
+                    "items": "string"
+                },
+                "brands": {
+                    "type": "array",
+                    "items": "string"
+                },
+                "priceMin": {
+                    "type": "number"
+                },
+                "priceMax": {
+                    "type": "number"
+                }
+            },
+            "events": [
+                "filter-change",
+                "clear"
+            ],
+            "priority": "low"
+        },
+        {
+            "id": "account-nav",
+            "name": "Account Portal Navigation",
+            "targetTag": "lb-account-nav",
+            "currentSelector": ".account-nav",
+            "locations": [
+                "account.html"
+            ],
+            "props": {
+                "activeSection": {
+                    "type": "string"
+                }
+            },
+            "events": [
+                "section-change"
+            ],
+            "priority": "medium"
+        },
+        {
+            "id": "invoice-row",
+            "name": "Invoice List Row",
+            "targetTag": "lb-invoice-row",
+            "currentSelector": ".invoice-row",
+            "locations": [
+                "account.html"
+            ],
+            "props": {
+                "invoiceNumber": {
+                    "type": "string"
+                },
+                "amount": {
+                    "type": "number"
+                },
+                "status": {
+                    "type": "string",
+                    "enum": [
+                        "open",
+                        "paid",
+                        "overdue"
+                    ]
+                },
+                "selected": {
+                    "type": "boolean",
+                    "default": false
+                }
+            },
+            "events": [
+                "select",
+                "pay"
+            ],
+            "priority": "low"
+        },
+        {
+            "id": "order-row",
+            "name": "Order History Row",
+            "targetTag": "lb-order-row",
+            "currentSelector": ".order-row",
+            "locations": [
+                "account.html"
+            ],
+            "props": {
+                "orderNumber": {
+                    "type": "string"
+                },
+                "status": {
+                    "type": "string"
+                },
+                "total": {
+                    "type": "number"
+                }
+            },
+            "events": [
+                "reorder",
+                "track"
+            ],
+            "priority": "low"
+        },
+        {
+            "id": "estimate-card",
+            "name": "Estimate/Quote Card",
+            "targetTag": "lb-estimate-card",
+            "currentSelector": ".estimate-card",
+            "locations": [
+                "account.html"
+            ],
+            "props": {
+                "estimateNumber": {
+                    "type": "string"
+                },
+                "status": {
+                    "type": "string",
+                    "enum": [
+                        "pending",
+                        "accepted",
+                        "expired"
+                    ]
+                },
+                "total": {
+                    "type": "number"
+                },
+                "validUntil": {
+                    "type": "string",
+                    "format": "date"
+                }
+            },
+            "events": [
+                "convert",
+                "markup",
+                "share"
+            ],
+            "priority": "low"
+        },
+        {
+            "id": "project-card",
+            "name": "Project Card",
+            "targetTag": "lb-project-card",
+            "currentSelector": ".project-card",
+            "locations": [
+                "account.html"
+            ],
+            "props": {
+                "projectId": {
+                    "type": "string"
+                },
+                "name": {
+                    "type": "string"
+                },
+                "address": {
+                    "type": "string"
+                },
+                "color": {
+                    "type": "string"
+                },
+                "status": {
+                    "type": "string",
+                    "enum": [
+                        "active",
+                        "completed",
+                        "archived"
+                    ]
+                }
+            },
+            "events": [
+                "click",
+                "edit",
+                "archive"
+            ],
+            "priority": "low"
+        }
+    ],
+    "migrationPriority": [
+        "lb-inventory-badge",
+        "lb-toast",
+        "lb-product-card",
+        "lb-header",
+        "lb-quantity-selector",
+        "lb-category-pill",
+        "lb-footer"
+    ],
+    "functions": {
+        "main.js": [
+            {
+                "name": "updateLocationUI",
+                "description": "Updates location buttons and persists selection",
+                "targetService": "LocationService"
+            },
+            {
+                "name": "openMobileNav",
+                "description": "Opens mobile navigation drawer",
+                "targetComponent": "lb-mobile-nav"
+            },
+            {
+                "name": "closeMobileNav",
+                "description": "Closes mobile navigation drawer",
+                "targetComponent": "lb-mobile-nav"
+            },
+            {
+                "name": "addToCart",
+                "description": "Adds product to cart with quantity",
+                "targetService": "CartService"
+            },
+            {
+                "name": "reorderItem",
+                "description": "Reorders a previous purchase",
+                "targetService": "CartService"
+            },
+            {
+                "name": "showToast",
+                "description": "Displays toast notification",
+                "targetComponent": "lb-toast"
+            }
+        ],
+        "products.js": [
+            {
+                "name": "init",
+                "description": "Page initialization",
+                "targetLocation": "PageController"
+            },
+            {
+                "name": "loadProducts",
+                "description": "Fetches product data from JSON",
+                "targetService": "ApiService"
+            },
+            {
+                "name": "renderCategoryPills",
+                "description": "Renders category filter pills",
+                "targetComponent": "lb-category-pill"
+            },
+            {
+                "name": "renderBrandFilters",
+                "description": "Renders brand checkboxes",
+                "targetComponent": "lb-filters-sidebar"
+            },
+            {
+                "name": "applyFilters",
+                "description": "Applies all active filters",
+                "targetService": "FilterService"
+            },
+            {
+                "name": "sortProducts",
+                "description": "Sorts filtered products",
+                "targetService": "FilterService"
+            },
+            {
+                "name": "renderProducts",
+                "description": "Renders product grid",
+                "targetComponent": "lb-product-card"
+            },
+            {
+                "name": "getInventoryBadge",
+                "description": "Returns inventory badge HTML",
+                "targetComponent": "lb-inventory-badge"
+            },
+            {
+                "name": "updateProductCount",
+                "description": "Updates product count display",
+                "targetLocation": "PageController"
+            },
+            {
+                "name": "updatePageHeader",
+                "description": "Updates page title and subtitle",
+                "targetLocation": "PageController"
+            },
+            {
+                "name": "updateURL",
+                "description": "Updates URL with filter state",
+                "targetService": "RouterService"
+            },
+            {
+                "name": "addToCart",
+                "description": "Adds product to cart",
+                "targetService": "CartService"
+            },
+            {
+                "name": "updateCartCount",
+                "description": "Updates cart count in header",
+                "targetService": "CartService"
+            }
+        ],
+        "account.js": [
+            {
+                "name": "showSection",
+                "description": "Shows account portal section",
+                "targetComponent": "lb-account-nav"
+            },
+            {
+                "name": "updateInvoiceSelection",
+                "description": "Updates invoice multi-select state",
+                "targetComponent": "lb-invoice-row"
+            }
+        ]
+    }
+}
