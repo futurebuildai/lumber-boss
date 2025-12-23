@@ -143,6 +143,7 @@ python3 -m http.server 8080
 
 ## Slash Commands
 
+- `/devteam` — Activate this system prompt in a new thread (start here)
 - `/CTO` — Final review and handoff protocol (REQUIRED before session end)
 - `/commit` — Git commit and push (will prompt for /CTO first)
 - `/learn` — Exit task mode, enter thought partner mode for learning/clarification

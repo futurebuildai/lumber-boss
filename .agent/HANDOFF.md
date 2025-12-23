@@ -146,6 +146,7 @@ Refactor legacy IIFE to use new services.
 
 | Command | Purpose |
 |---------|---------|
+| `/devteam` | Activate system prompt in new thread |
 | `/CTO` | Final review and handoff protocol |
 | `/commit` | Git commit and push (prompts for /CTO first) |
 | `/learn` | Exit task mode, enter thought partner mode |
