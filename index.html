@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lumber Boss | Your Local Building Materials Experts</title>
+  <meta name="description"
+    content="Lumber Boss is your trusted lumber yard serving contractors and homeowners. Shop lumber, building materials, doors, windows, and more.">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap"
+    rel="stylesheet">
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <!-- Location Modal -->
+  <div id="location-modal" class="modal">
+    <div class="modal-content glass">
+      <h2>Welcome to Lumber Boss</h2>
+      <p>Please confirm your preferred location:</p>
+      <div class="location-buttons">
+        <button class="btn btn-primary" data-location="oakdale">Oakdale</button>
+        <button class="btn btn-primary" data-location="pinewood">Pinewood</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Header -->
+  <header class="header">
+    <div class="container header-inner">
+      <!-- Logo -->
+      <a href="/" class="logo">
+        <div class="logo-icon">⬡</div>
+        <div class="logo-text">
+          <span class="logo-name">LUMBER BOSS</span>
+          <span class="logo-tagline">Pro Materials. Delivered.</span>
+        </div>
+      </a>
+
+      <!-- Search Bar -->
+      <div class="search-bar">
+        <input type="text" placeholder="Search products..." id="search-input">
+        <button class="search-btn" aria-label="Search">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="11" cy="11" r="8"></circle>
+            <path d="M21 21l-4.35-4.35"></path>
+          </svg>
+        </button>
+      </div>
+
+      <!-- Utility Nav -->
+      <nav class="utility-nav">
+        <a href="#" class="utility-link" data-action="sign-in">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+            <circle cx="12" cy="7" r="4"></circle>
+          </svg>
+          <span>Sign In</span>
+        </a>
+        <a href="#" class="utility-link">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+            <polyline points="14 2 14 8 20 8"></polyline>
+            <line x1="16" y1="13" x2="8" y2="13"></line>
+            <line x1="16" y1="17" x2="8" y2="17"></line>
+          </svg>
+          <span>Quote</span>
+        </a>
+        <a href="#" class="utility-link cart-link">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="9" cy="21" r="1"></circle>
+            <circle cx="20" cy="21" r="1"></circle>
+            <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+          </svg>
+          <span>Cart</span>
+          <span class="cart-count">0</span>
+        </a>
+        <button class="menu-toggle" aria-label="Menu" id="menu-toggle">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <line x1="3" y1="12" x2="21" y2="12"></line>
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <line x1="3" y1="18" x2="21" y2="18"></line>
+          </svg>
+        </button>
+      </nav>
+    </div>
+
+    <!-- Main Nav -->
+    <nav class="main-nav">
+      <div class="container main-nav-inner">
+        <ul class="nav-links">
+          <li><a href="#products">Products</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#showrooms">Showrooms</a></li>
+          <li><a href="#about">About Us</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+        <div class="location-picker">
+          <button class="location-btn active" data-location="oakdale">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+              <circle cx="12" cy="10" r="3"></circle>
+            </svg>
+            Oakdale
+          </button>
+          <button class="location-btn" data-location="pinewood">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+              <circle cx="12" cy="10" r="3"></circle>
+            </svg>
+            Pinewood
+          </button>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Mobile Nav Drawer -->
+  <aside class="mobile-nav" id="mobile-nav">
+    <div class="mobile-nav-header">
+      <span class="mobile-nav-title">Menu</span>
+      <button class="mobile-nav-close" id="mobile-nav-close" aria-label="Close menu">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <line x1="18" y1="6" x2="6" y2="18"></line>
+          <line x1="6" y1="6" x2="18" y2="18"></line>
+        </svg>
+      </button>
+    </div>
+    <ul class="mobile-nav-links">
+      <li><a href="#products">Products</a></li>
+      <li><a href="#services">Services</a></li>
+      <li><a href="#showrooms">Showrooms</a></li>
+      <li><a href="#about">About Us</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <div class="mobile-nav-location">
+      <p>Select Location:</p>
+      <button class="btn btn-outline" data-location="oakdale">Oakdale</button>
+      <button class="btn btn-outline" data-location="pinewood">Pinewood</button>
+    </div>
+  </aside>
+  <div class="mobile-nav-overlay" id="mobile-nav-overlay"></div>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="hero-bg"></div>
+    <div class="hero-content">
+      <div class="hero-card glass">
+        <h1>Your Local Lumber Experts</h1>
+        <p>Serving contractors and homeowners with premium lumber, building materials, and expert advice.</p>
+        <a href="#products" class="btn btn-cta">Order Online Now</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Quick Reorder Section -->
+  <section class="section quick-reorder" id="quick-reorder">
+    <div class="container">
+      <div class="quick-reorder-header">
+        <h2 class="section-title">Quick Reorder</h2>
+        <a href="#" class="view-all-link">View Order History →</a>
+      </div>
+      <p class="quick-reorder-subtitle">Your recent purchases — one click to reorder</p>
+
+      <div class="recent-orders-carousel" id="recent-orders">
+        <!-- Recent order items will be populated by JS -->
+        <div class="recent-order-card" data-product-id="SKU-2X4-8">
+          <div class="recent-order-image" style="background: linear-gradient(135deg, #8B4513, #A0522D);"></div>
+          <div class="recent-order-info">
+            <h4>2x4x8 Stud Grade SPF</h4>
+            <p class="recent-order-meta">Last ordered: Dec 15 • Qty: 200</p>
+            <div class="recent-order-price">$4.29 <span>each</span></div>
+          </div>
+          <button class="btn btn-reorder" onclick="reorderItem('SKU-2X4-8', 200)">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M23 4v6h-6"></path>
+              <path d="M1 20v-6h6"></path>
+              <path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"></path>
+            </svg>
+            Reorder
+          </button>
+        </div>
+
+        <div class="recent-order-card" data-product-id="SKU-CDX-12">
+          <div class="recent-order-image" style="background: linear-gradient(135deg, #DEB887, #F5DEB3);"></div>
+          <div class="recent-order-info">
+            <h4>1/2" CDX Plywood 4x8</h4>
+            <p class="recent-order-meta">Last ordered: Dec 12 • Qty: 50</p>
+            <div class="recent-order-price">$42.99 <span>sheet</span></div>
+          </div>
+          <button class="btn btn-reorder" onclick="reorderItem('SKU-CDX-12', 50)">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M23 4v6h-6"></path>
+              <path d="M1 20v-6h6"></path>
+              <path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"></path>
+            </svg>
+            Reorder
+          </button>
+        </div>
+
+        <div class="recent-order-card" data-product-id="SKU-DW-12">
+          <div class="recent-order-image" style="background: linear-gradient(135deg, #E8E8E8, #D3D3D3);"></div>
+          <div class="recent-order-info">
+            <h4>1/2" Drywall 4x8</h4>
+            <p class="recent-order-meta">Last ordered: Dec 10 • Qty: 100</p>
+            <div class="recent-order-price">$12.49 <span>sheet</span></div>
+          </div>
+          <button class="btn btn-reorder" onclick="reorderItem('SKU-DW-12', 100)">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M23 4v6h-6"></path>
+              <path d="M1 20v-6h6"></path>
+              <path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"></path>
+            </svg>
+            Reorder
+          </button>
+        </div>
+
+        <div class="recent-order-card" data-product-id="SKU-OSB-78">
+          <div class="recent-order-image" style="background: linear-gradient(135deg, #D2691E, #CD853F);"></div>
+          <div class="recent-order-info">
+            <h4>7/16" OSB Sheathing 4x8</h4>
+            <p class="recent-order-meta">Last ordered: Dec 8 • Qty: 75</p>
+            <div class="recent-order-price">$18.99 <span>sheet</span></div>
+          </div>
+          <button class="btn btn-reorder" onclick="reorderItem('SKU-OSB-78', 75)">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M23 4v6h-6"></path>
+              <path d="M1 20v-6h6"></path>
+              <path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"></path>
+            </svg>
+            Reorder
+          </button>
+        </div>
+      </div>
+
+      <div class="quick-reorder-actions">
+        <button class="btn btn-primary" id="reorder-all-btn">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="9" cy="21" r="1"></circle>
+            <circle cx="20" cy="21" r="1"></circle>
+            <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+          </svg>
+          Reorder All Items
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Product Categories -->
+  <section class="section categories" id="products">
+    <div class="container">
+      <h2 class="section-title">Shop by Category</h2>
+      <div class="category-grid">
+        <a href="#" class="category-card">
+          <div class="category-image" data-category="lumber"></div>
+          <div class="category-info">
+            <h3>Lumber</h3>
+            <span class="category-link">Shop Now →</span>
+          </div>
+        </a>
+        <a href="#" class="category-card">
+          <div class="category-image" data-category="engineered"></div>
+          <div class="category-info">
+            <h3>Engineered Products</h3>
+            <span class="category-link">Shop Now →</span>
+          </div>
+        </a>
+        <a href="#" class="category-card">
+          <div class="category-image" data-category="sheetgoods"></div>
+          <div class="category-info">
+            <h3>Sheetgoods</h3>
+            <span class="category-link">Shop Now →</span>
+          </div>
+        </a>
+        <a href="#" class="category-card">
+          <div class="category-image" data-category="drywall"></div>
+          <div class="category-info">
+            <h3>Drywall & Sheetrock</h3>
+            <span class="category-link">Shop Now →</span>
+          </div>
+        </a>
+        <a href="#" class="category-card">
+          <div class="category-image" data-category="siding"></div>
+          <div class="category-info">
+            <h3>Siding & Trim</h3>
+            <span class="category-link">Shop Now →</span>
+          </div>
+        </a>
+        <a href="#" class="category-card">
+          <div class="category-image" data-category="decking"></div>
+          <div class="category-info">
+            <h3>Decking</h3>
+            <span class="category-link">Shop Now →</span>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Showrooms -->
+  <section class="section showrooms" id="showrooms">
+    <div class="container">
+      <h2 class="section-title">Visit Our Showrooms</h2>
+      <div class="showroom-grid">
+        <div class="showroom-card">
+          <div class="showroom-image" data-showroom="doors"></div>
+          <div class="showroom-content">
+            <h3>Door Showroom</h3>
+            <p>Explore our extensive collection of interior and exterior doors from top brands.</p>
+            <a href="#" class="btn btn-secondary">Explore Doors</a>
+          </div>
+        </div>
+        <div class="showroom-card">
+          <div class="showroom-image" data-showroom="windows"></div>
+          <div class="showroom-content">
+            <h3>Window Showroom</h3>
+            <p>From energy-efficient to custom designs, find the perfect windows for your project.</p>
+            <a href="#" class="btn btn-secondary">Explore Windows</a>
+          </div>
+        </div>
+        <div class="showroom-card">
+          <div class="showroom-image" data-showroom="kitchen"></div>
+          <div class="showroom-content">
+            <h3>Kitchen Display</h3>
+            <p>Get inspired by our curated kitchen setups featuring cabinets and countertops.</p>
+            <a href="#" class="btn btn-secondary">Explore Kitchens</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services -->
+  <section class="section services" id="services">
+    <div class="container">
+      <h2 class="section-title">Our Services</h2>
+      <div class="services-grid">
+        <div class="service-card">
+          <div class="service-icon">🚚</div>
+          <h3>Job Site Delivery</h3>
+          <p>We deliver directly to your job site with our fleet of trucks and boom equipment.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-icon">✂️</div>
+          <h3>Custom Cutting</h3>
+          <p>Save time with our precision cutting services for lumber and sheet goods.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-icon">📋</div>
+          <h3>Project Quotes</h3>
+          <p>Get detailed quotes for your projects from our experienced estimators.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-icon">💳</div>
+          <h3>Pro Accounts</h3>
+          <p>Open a contractor account for credit terms, volume pricing, and priority service.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Pro CTA -->
+  <section class="section pro-cta">
+    <div class="container">
+      <div class="pro-cta-content glass">
+        <div class="pro-cta-text">
+          <h2>Pro Account Holders</h2>
+          <p>Sign in to access your account, view invoices, pay bills, and manage your orders.</p>
+        </div>
+        <a href="#" class="btn btn-cta" data-action="sign-in">Sign In to Your Account</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer" id="contact">
+    <div class="container footer-grid">
+      <div class="footer-col">
+        <div class="footer-logo">
+          <div class="logo-icon">⬡</div>
+          <span>LUMBER BOSS</span>
+        </div>
+        <p class="footer-tagline">Pro Materials. Delivered.</p>
+        <div class="social-links">
+          <a href="#" aria-label="Facebook">📘</a>
+          <a href="#" aria-label="Instagram">📷</a>
+          <a href="#" aria-label="YouTube">🎬</a>
+        </div>
+      </div>
+
+      <div class="footer-col">
+        <h4>Oakdale</h4>
+        <address>
+          1200 Timber Lane<br>
+          Oakdale, TX 75001<br>
+          <a href="tel:5551234567">(555) 123-4567</a>
+        </address>
+        <p class="hours">Mon-Fri 7am-5pm<br>Sat 8am-4pm</p>
+      </div>
+
+      <div class="footer-col">
+        <h4>Pinewood</h4>
+        <address>
+          4500 Forest Drive<br>
+          Pinewood, TX 75002<br>
+          <a href="tel:5559876543">(555) 987-6543</a>
+        </address>
+        <p class="hours">Mon-Fri 7am-5pm<br>Sat 8am-4pm</p>
+      </div>
+
+      <div class="footer-col">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="#products">Products</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#showrooms">Showrooms</a></li>
+          <li><a href="#about">About Us</a></li>
+          <li><a href="#">Careers</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Pro Tools</h4>
+        <ul>
+          <li><a href="#">Sign In</a></li>
+          <li><a href="#">Pay Invoice</a></li>
+          <li><a href="#">Request Quote</a></li>
+          <li><a href="#">Open Account</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <div class="container">
+        <p>&copy; 2024 Lumber Boss. All rights reserved.</p>
+        <div class="footer-legal">
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms of Service</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="main.js"></script>
+</body>
+
+</html>
